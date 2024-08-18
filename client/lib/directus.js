@@ -1,8 +1,5 @@
 import { createDirectus, rest } from "@directus/sdk";
 
-const directus = createDirectus(
-  "http://0.0.0.0:8055/"
-).with(rest());
+const directus = createDirectus("http://0.0.0.0:8055/").with(rest());
 
-console.log("directus", directus);
 export default directus;
