@@ -15,10 +15,3 @@ services:
       DB_CLIENT: "sqlite3"
       DB_FILENAME: "/directus/database/data.db"
       WEBSOCKETS_ENABLED: "true"
-  client:
-    build:
-      context: ./client
-      dockerfile: development.dockerfile
-    ports:
-      - "3000:3000"
-      
