@@ -4,7 +4,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <nav>
+        <nav data-testid="navbar">
           <Link href="/">Home</Link>
           {" | "}
           <Link href="/about">About</Link>
