@@ -12,6 +12,7 @@ async function getPost(slug) {
 
     return post;
   } catch (error) {
+    console.error(error);
     notFound();
   }
 }

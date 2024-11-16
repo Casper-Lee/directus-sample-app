@@ -1,5 +1,4 @@
 import directus from "@/lib/directus";
-import { notFound } from "next/navigation";
 import { readItem } from "@directus/sdk";
 
 async function getPage(slug) {
