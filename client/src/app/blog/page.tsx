@@ -1,3 +1,4 @@
+import Card from "@/components/card/card";
 import directus from "@/lib/directus";
 import { readItems } from "@directus/sdk";
 
@@ -13,22 +14,23 @@ async function getPosts() {
 export default async function DynamicPage() {
   const posts = await getPosts();
   return (
-    <div>
-      <h1>Blog</h1>
-      <ul>
+    <div className="flex flex-col items-center mt-8">
+      <h1 className="text-5xl">Blog</h1>
+
+      <div className="flex">
         {posts.map((post) => {
           return (
-            <li key={post.slug}>
-              <h2>
-                <a href={`/blog/${post.slug}`}>{post.title}</a>
-              </h2>
-              <span>
-                {post.publish_date} &bull; {post.author.name}
-              </span>
-            </li>
+            <>
+              <Card
+                authorName={post.author.name}
+                slug={post.slug}
+                publishDate={post.publish_date}
+                title={post.title}
+              />
+            </>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

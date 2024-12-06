@@ -9,9 +9,14 @@ async function getPage(slug) {
 export default async function DynamicPage({ params }) {
   const page = await getPage(params.slug);
   return (
-    <div>
-      <h1>{page.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content }}></div>
+    <div className="flex flex-col items-center mt-8">
+      <div className="flex flex-col items-center w-3/5">
+        <h1 className="text-5xl">{page.title}</h1>
+        <div
+          className="text-center mt-4"
+          dangerouslySetInnerHTML={{ __html: page.content }}
+        ></div>
+      </div>
     </div>
   );
 }
