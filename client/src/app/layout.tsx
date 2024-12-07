@@ -12,23 +12,43 @@ export default function RootLayout({
       <body>
         <div className="flex justify-center">
           <nav className="flex justify-between w-2/5" data-testid="navbar">
-            <Link className="hover:text-neutral-400" href="/">
+            <Link
+              data-testid="home-link"
+              className="hover:text-neutral-400"
+              href="/"
+            >
               Home
             </Link>
             {" | "}
-            <Link className="hover:text-neutral-400" href="/about">
+            <Link
+              data-testid="about-link"
+              className="hover:text-neutral-400"
+              href="/about"
+            >
               About
             </Link>
             {" | "}
-            <Link className="hover:text-neutral-400" href="/conduct">
+            <Link
+              data-testid="conduct-link"
+              className="hover:text-neutral-400"
+              href="/conduct"
+            >
               Code of Conduct
             </Link>
             {" | "}
-            <Link className="hover:text-neutral-400" href="/privacy">
+            <Link
+              data-testid="privacy-link"
+              className="hover:text-neutral-400"
+              href="/privacy"
+            >
               Privacy Policy
             </Link>
             {" | "}
-            <Link className="hover:text-neutral-400" href="/blog">
+            <Link
+              data-testid="blog-link"
+              className="hover:text-neutral-400"
+              href="/blog"
+            >
               Blog
             </Link>
           </nav>

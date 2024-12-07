@@ -71,7 +71,7 @@ export default defineConfig({
   ],
 
   // https://playwright.dev/docs/api/class-testconfig#test-config-output-dir
-  snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{arg}{ext}',
+  snapshotPathTemplate: '{testDir}/__screenshots__/{arg}{ext}',
 
 
   /* Run your local dev server before starting the tests */
