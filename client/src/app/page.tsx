@@ -7,12 +7,14 @@ async function getGlobals() {
 }
 
 export default async function HomePage() {
+  const timestamp = Date.now();
+
   const global = await getGlobals();
   return (
     <div className="flex flex-col items-center">
       <div className="text-center mt-8">
         <Image
-          src={`${directus.url}assets/${global.images}`}
+          src={`${directus.url}assets/${global.images}?v=${timestamp}`}
           width={1500}
           height={400}
           alt=""
