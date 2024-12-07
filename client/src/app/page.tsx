@@ -3,13 +3,16 @@ import { readItems } from "@directus/sdk";
 import Image from "next/image";
 
 async function getGlobals() {
-  return directus.request(readItems("global"));
+  const global = directus.request(readItems("global"));
+  return global;
 }
 
 export default async function HomePage() {
   const timestamp = Date.now();
 
-  const global = await getGlobals();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const global: any = await getGlobals();
+
   return (
     <div className="flex flex-col items-center">
       <div className="text-center mt-8">
