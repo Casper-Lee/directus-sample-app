@@ -1,12 +1,16 @@
 import directus from "@/lib/directus";
 import { readItem } from "@directus/sdk";
 
-async function getPage(slug) {
+async function getPage(slug: string) {
   const page = await directus.request(readItem("pages", slug));
   return page;
 }
 
-export default async function DynamicPage({ params }) {
+export default async function DynamicPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const page = await getPage(params.slug);
   return (
     <div className="flex flex-col items-center mt-8">

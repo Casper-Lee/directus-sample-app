@@ -3,7 +3,7 @@ import { readItem } from "@directus/sdk";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-async function getPost(slug) {
+async function getPost(slug: string) {
   try {
     const post = await directus.request(
       readItem("posts", slug, {
@@ -18,7 +18,11 @@ async function getPost(slug) {
   }
 }
 
-export default async function DynamicPage({ params }) {
+export default async function DynamicPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getPost(params.slug);
   return (
     <div className="flex flex-col items-center mt-8">
@@ -29,7 +33,10 @@ export default async function DynamicPage({ params }) {
         alt=""
       />
       <h1>{post.title}</h1>
-      <div className="w-3/6 text-center" dangerouslySetInnerHTML={{ __html: post.content }}></div>
+      <div
+        className="w-3/6 text-center"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      ></div>
     </div>
   );
 }
