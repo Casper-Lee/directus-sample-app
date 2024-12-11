@@ -3,8 +3,12 @@ import { readItems } from "@directus/sdk";
 import Image from "next/image";
 
 async function getGlobals() {
-  const global = directus.request(readItems("global"));
-  return global;
+  try {
+    const global = directus.request(readItems("global"));
+    return global;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export default async function HomePage() {
